@@ -19,7 +19,7 @@ func main() {
 		panic(err)
 	}
 
-	APPconn, err := net.Dial("tcp", "10.22.11.17:9990")
+	APPconn, err := net.Dial("tcp", "127.0.0.1:9990")
 	if err != nil {
 		logger.Error("error connection to socat", zap.Error(err))
 		return
@@ -28,7 +28,7 @@ func main() {
 
 	logger.Info("connected to APP", zap.String("addr", APPconn.RemoteAddr().String()))
 
-	l, err := net.Listen("tcp", "localhost:9090")
+	l, err := net.Listen("tcp", "127.0.0.1:9090")
 	if err != nil {
 		return
 	}
