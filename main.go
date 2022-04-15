@@ -28,7 +28,7 @@ func main() {
 
 	logger.Info("connected to APP", zap.String("addr", APPconn.RemoteAddr().String()))
 
-	l, err := net.Listen("tcp", "127.0.0.1:9090")
+	l, err := net.Listen("tcp", "0.0.0.0:9090")
 	if err != nil {
 		return
 	}
